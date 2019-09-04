@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class ContentComponent implements OnInit {
 
-  public mypopulars:any[];
+  public mypopulars:Object;
   constructor(private ms:MoviesServiceService) { }
 
   ngOnInit() {
      this.ms.getPopularMovies().subscribe(res=>{
        this.mypopulars = res;
-       this.mypopulars= Array.of(this.mypopulars)
+       this.mypopulars = Array.of(this.mypopulars);
      }, error => {
          console.log('An error occurred', error)
       })
@@ -29,8 +29,8 @@ export class ContentComponent implements OnInit {
   Search(searchdata){
     this.ms.searchMovies(searchdata).subscribe(res=>{
       this.mypopulars = res;
-      this.mypopulars = Array.of(this.mypopulars)
-      
+       this.mypopulars = Array.of(this.mypopulars);
+
     }, error => {console.log("An error occurred",error)} )
   }
 
