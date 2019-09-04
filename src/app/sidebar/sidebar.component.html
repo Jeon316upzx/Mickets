@@ -1,0 +1,8 @@
+<div class="sidebar">
+   <h2 class="title">Mickets</h2>
+   <ul class="sidebar-ul" *ngFor="let mygenre of mygenres | keyvalue">
+        <li class="sidebar-li" *ngFor="let genre of mygenre.value" (click)="showGenre(genre.name)">{{ genre.name }}</li>
+   </ul>
+</div>
+
+<app-content></app-content>

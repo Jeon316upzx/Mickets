@@ -1,0 +1,18 @@
+<div class="content">
+    <form id="searchform" (ngSubmit)="Search(SearchInput.value)">
+      <div class="form-group">
+        <input ngModel name="SearchInput" #SearchInput="ngModel" type="text" class="form-control"  placeholder="Search movie">
+      </div>
+    </form>
+      <h2 class="category"> Most Popular  </h2>
+
+
+    <div class="wrapper" *ngFor="let mypopular of mypopulars">
+      <!-- {{ mypopular.results }} -->
+      <div class="inner-wrapper" *ngFor="let p of mypopular.results" >
+        <img src="https://image.tmdb.org/t/p/w500{{ p.poster_path }}" alt="Images" >
+          <!-- <div class="in-inner-wrapper" *ngFor="let myp of p.poster_path">
+          </div> -->
+      </div>
+    </div>
+</div>
